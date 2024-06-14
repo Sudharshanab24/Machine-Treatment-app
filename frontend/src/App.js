@@ -15,6 +15,7 @@ const App = () => {
     const [user, setUser] = useState(null);
     const [showRegister, setShowRegister] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
+    const [showLoginOverlay, setShowLoginOverlay] = useState(false);
 
     useEffect(() => {
         setMachineTypes([
@@ -114,7 +115,7 @@ const App = () => {
             setUpdateTreatment('');
             setUpdateTreatmentId(null);
         } catch (error) {
-            alert('Failed to update treatment.');
+            alert('Failed to update treatment.Please login');
         }
     };
 
@@ -134,7 +135,7 @@ const App = () => {
             alert('Treatment deleted successfully!');
             fetchTreatments(machineType);
         } catch (error) {
-            alert('Failed to delete treatment.');
+            alert('Failed to delete treatment.Please login.');
         }
     };
 
